@@ -1,0 +1,18 @@
+version: "3"
+services:
+  product-backend:
+    image: aadhar-backend-app
+    ports:
+      - "8080:8080"
+    networks:
+      - AadharApp
+  product-frontend:
+    image: aadhar-frontend-app
+    ports:
+      - "80:80"
+    depends_on:
+      - Aadhar-backend
+    networks:
+      - AadharApp
+networks:
+  AadharApp
